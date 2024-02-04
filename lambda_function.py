@@ -7,7 +7,9 @@ def lambda_handler(event, context):
     print(MINHA_VAR)
     print('Testando nova versão')
     return {
-        
         'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!2')
+        'body': f'<html><body>Dados da requisicap {event}</body></html>',
+        'headers': {
+            "content-type" : "text/html"
+        }
     }
